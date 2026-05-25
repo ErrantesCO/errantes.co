@@ -20,7 +20,8 @@ body {
   justify-content: center;
 }
 
-.container img {
+.container img,
+.container video {
   display: block;
   max-width: 100%;
   height: auto;
