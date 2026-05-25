@@ -26,3 +26,8 @@ body {
   max-width: 100%;
   height: auto;
 }
+
+.container video {
+  width: min(100vw, 1667px);
+  aspect-ratio: 1667 / 988;
+}

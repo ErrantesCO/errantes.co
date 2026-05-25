@@ -8,9 +8,20 @@
 </head>
 <body>
   <main class="container">
-    <video autoplay loop muted playsinline loading="lazy" preload="none">
+    <video id="ascii-video" autoplay loop muted playsinline preload="none" width="1667" height="988">
+      <source src="assets/ascii-art-mobile.webm" type="video/webm" media="(max-width: 768px)">
       <source src="assets/ascii-art.webm" type="video/webm">
     </video>
   </main>
+  <script>
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const video = document.getElementById("ascii-video");
+
+    if (prefersReducedMotion.matches && video) {
+      video.removeAttribute("autoplay");
+      video.pause();
+      video.currentTime = 0;
+    }
+  </script>
 </body>
 </html>
